@@ -1,19 +1,37 @@
-(
-    function () {
 
-        'use strict';
+(function(){
 
-        angular.module('app',[])
+    'use strict';
 
-        .constant('API_PATH', (window.location.protocol == 'https:') ? `${window.location.protocol}//${window.location.hostname}/v${version.replace(".", "_")}/restphp/` : `${window.location.protocol}//${window.location.hostname}/src/restphp/`)
+    angular.module('app', [ 
+        'ui.router',
+        'app.mainPage'
+    ])
 
-        // local
-        .constant('NODE_API_PATH', 'https://kalvi20-bqezo683.b4a.run/')
+    .constant('NODE_API_PATH', 'https://kalvi20-bqezo683.b4a.run/')
+    
+    .controller('mainController', function($scope,$rootScope,$window, $http,NODE_API_PATH,$state) {
 
-        .controller('mainController',function(){
+        $scope.firstName = "kalaivendhan";
+        $scope.lastName = "Doe";
+    
+        // console.log(NODE_API_PATH,'node api path');
 
-            console.log('checking main controller');
-        })
+        const Url_path = window.location.href.split('/');
+
+        // console.log($rootScope,'root scope');
+
+        // console.log(Url_path,'urlpath');
+
+        if(Url_path[4]=="eduTrackPro.html"){
+
+            // console.log('check1');
+            
+            $state.go('authentication.main');
+        }
         
-    }
-)();
+    });
+
+})();
+
+

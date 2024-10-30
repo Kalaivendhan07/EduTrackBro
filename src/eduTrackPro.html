@@ -17,12 +17,13 @@
     <!-- Setting Expires to 0 or a past date (like -1) indicates that the page has expired immediately and should not be cached. This is another compatibility header that reinforces no-cache behavior. -->
     <meta http-equiv="Expires" content="0" />
 
-    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="icon" type="image/png" href="eduTrackProLogo.png" />
+
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script> -->
 
     <!-- Place favicon.png in the root directory -->
     <!-- <link rel="icon" type="image/png" href="eduTrackProLogo.png" /> -->
 
-    <!-- bower:css -->
     <link rel="stylesheet" href="../resources/v1_0/bower_components/angular-chart.js/dist/angular-chart.min.css" />
     <link rel="stylesheet" href="../resources/v1_0/bower_components/angular-dragula/dist/dragula.min.css" />
     <link rel="stylesheet" href="../resources/v1_0/bower_components/angular-material-data-table/dist/md-data-table.min.css" />
@@ -41,23 +42,10 @@
      <!-- endbuild -->
  
 </head>
-<body>  
-
-    hellow world
+<body translate-cloak ng-class="bodyClasses">  
     
-     <!-- Google Tag Manager (noscript) -->
-     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TRLMZVX"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+        <div layout="row" class="full-height" ui-view="root"></div>
 
-        hii
-
-        <!-- build:js(src) scripts/vendor.js -->
-        <!-- bower:js -->
-
-        <!-- <script src="https://code.angularjs.org/1.3.14/angular.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
-        <script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script> -->
         <script src="../resources/v1_0/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../resources/v1_0/bower_components/highlightjs/highlight.pack.min.js"></script>
         <script src="../resources/v1_0/bower_components/angular/angular.min.js"></script>
@@ -105,22 +93,29 @@
         <script src="../resources/v1_0/bower_components/angular-permission/dist/angular-permission-ng.min.js"></script>
         <script src="../resources/v1_0/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <script src="../resources/v1_0/bower_components/angular-utf8-base64/angular-utf8-base64.min.js"></script>
-
+    
         <script src="../resources/v1_0/bower_components/countUp.js/countUp.js"></script>
         <script src="../resources/v1_0/bower_components/countUp.js/dist/countUp.js"></script>
         <!-- timepicker -->
         <script src="../resources/v1_0/bower_components/mdPickers/dist/mdPickers.min.js"></script>
-
+    
         <link rel="stylesheet" type="text/css" href="../resources/v1_0/bower_components/angularjs-slider-master/dist/rzslider.css" />
         <script src="../resources/v1_0/bower_components/angularjs-slider-master/dist/rzslider.min.js"></script>
         <script src="../resources/v1_0/bower_components/javascript-detect-element-resize-master/jquery.resize.js"></script>
         <script src="../resources/v1_0/bower_components/angular-gridster/dist/angular-gridster.min.js"></script>
 
-        <!-- enqueue all translations for calendar (remove if you dont need multilanguage) -->
+         <!-- enqueue all translations for calendar (remove if you dont need multilanguage) -->
         <script src="../resources/v1_0/bower_components/fullcalendar/dist/lang-all.js"></script>
         <!-- endbuild -->
 
-        end
+        <script src="app/eduTrackPro.module.js"></script>
+
+        <script src="app/authentication/loginModulePlugins.js"></script>
+        <script src="app/authentication/login/mainPageConfig.js"></script>
+        <script src="app/authentication/login/mainPageController.js"></script>
+        <script src="app/authentication/layouts/authentication.controller.js"></script>
+
+        
 
 </body>
 </html>
