@@ -23,12 +23,12 @@
 
         // console.log(Url_path,'urlpath');
 
-        if(Url_path[4]=="eduTrackPro.html?"){
+        // if(Url_path[4]=="eduTrackPro.html?"){
 
             // console.log('check1');
             
             $state.go('authentication.main');
-        }
+        // }
         
     });
 
