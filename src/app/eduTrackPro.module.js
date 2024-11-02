@@ -4,7 +4,8 @@
     'use strict';
 
     angular.module('app', [ 
-        'ui.router'
+        'ui.router',
+        'app.main'
     ])
 
     .constant('NODE_API_PATH', 'https://kalvi20-bqezo683.b4a.run/')
@@ -26,7 +27,7 @@
 
             // console.log('check1');
             
-            // $state.go('authentication.main');
+            // $state.go('login');
         // }
         
     });

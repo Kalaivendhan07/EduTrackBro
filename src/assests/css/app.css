@@ -1,0 +1,12 @@
+.navbar {
+    padding: 1rem;
+}
+
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-nav .nav-link.active {
+    color: #007bff;
+    font-weight: bold;
+}

@@ -40,11 +40,58 @@
      <!-- endinject -->
      <link rel="stylesheet" href="../resources/v1_0/bower_components/highlightjs/styles/xcode.css">
      <!-- endbuild -->
+
+     <link rel="stylesheet" href="./assests/css/app.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
  
 </head>
 <body translate-cloak ng-class="bodyClasses">  
+
     
-        <div layout="row" class="full-height" ui-view="root"></div>
+        <div>
+             <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
+            <!-- Brand -->
+            <a class="navbar-brand" ui-sref="home">
+                EduTrack Pro
+               <img style="width: 4%;margin-bottom: 2px;" ng-src="./assests/svg/logo2.svg" alt="logo">
+            </a>
+            
+
+            <!-- Toggler/collapsible Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="home" ui-sref-active="active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="about" ui-sref-active="active">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="login" ui-sref-active="active">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" ui-sref="feedback" ui-sref-active="active">Feedback</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        </div>
+
+        <!-- Main Content Area -->
+        <div>
+            <ui-view></ui-view>
+        </div>
+
+
+        <!--  -->
+
+
 
         <script src="../resources/v1_0/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="../resources/v1_0/bower_components/highlightjs/highlight.pack.min.js"></script>
@@ -109,8 +156,9 @@
         <!-- endbuild -->
 
         <script src="app/eduTrackPro.module.js"></script>
-
-        
+        <script src="app/mainPage/mainPageConfig.js"></script>
+        <script src="app/mainPage/login.controller.js"></script>
+        <script src="app/mainPage/home.controller.js"></script>
 
 </body>
 </html>
