@@ -4,8 +4,7 @@
     'use strict';
 
     angular.module('app', [ 
-        'ui.router',
-        'app.mainPage'
+        'ui.router'
     ])
 
     .constant('NODE_API_PATH', 'https://kalvi20-bqezo683.b4a.run/')
@@ -15,7 +14,7 @@
         $scope.firstName = "kalaivendhan";
         $scope.lastName = "Doe";
     
-        // console.log(NODE_API_PATH,'node api path');
+        console.log(NODE_API_PATH,'node api path');
 
         const Url_path = window.location.href.split('/');
 
@@ -27,7 +26,7 @@
 
             // console.log('check1');
             
-            $state.go('authentication.main');
+            // $state.go('authentication.main');
         // }
         
     });
