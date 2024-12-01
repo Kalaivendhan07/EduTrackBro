@@ -5,7 +5,8 @@
 
     angular.module('app', [ 
         'ui.router',
-        'app.main'
+        'app.main',
+        'triangular'
     ])
 
     .constant('NODE_API_PATH', 'https://kalvi20-bqezo683.b4a.run/')
@@ -14,6 +15,8 @@
 
         $scope.firstName = "kalaivendhan";
         $scope.lastName = "Doe";
+
+        
     
         console.log(NODE_API_PATH,'node api path');
 

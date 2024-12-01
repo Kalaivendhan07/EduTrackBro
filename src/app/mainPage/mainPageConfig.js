@@ -5,7 +5,10 @@
 
         angular.module('app.main',[]).config(moduleConfig);
 
-        function moduleConfig($stateProvider) {
+        function moduleConfig($stateProvider,$urlRouterProvider) {
+
+             
+            // $urlRouterProvider.otherwise('/home');
 
             $stateProvider
 

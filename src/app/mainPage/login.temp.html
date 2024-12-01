@@ -1,4 +1,141 @@
+<style>
+    /* Center container styling */
+    .container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-<div>
-    loginntemplate
+    /* Form title */
+    h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+        font-family: Arial, sans-serif;
+        font-weight: 600;
+    }
+
+    /* Labels */
+    .form-group label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Input fields */
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 15px;
+        transition: border-color 0.3s;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+    }
+
+    /* Submit button */
+    .btn-primary {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #007bff;
+        border-color: #007bff;
+        border-radius: 4px;
+        color: #fff;
+        transition: background-color 0.3s;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    /* Link for switching forms */
+    p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    p a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s;
+    }
+
+    p a:hover {
+        color: #0056b3;
+    }
+
+    /* Error message */
+    .alert-danger {
+        font-size: 14px;
+        text-align: center;
+        color: #721c24;
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    /* Margin helpers */
+    .mt-3 {
+        margin-top: 1rem;
+    }
+    .mt-5 {
+        margin-top: 3rem;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <h2 ng-show="!showRegister">Login</h2>
+    <h2 ng-show="showRegister">Register</h2>
+
+    <!-- Login Form -->
+    <form ng-submit="login()" ng-show="!showRegister">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" ng-model="user.email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" ng-model="user.password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        <p class="mt-3">
+            Don't have an account? 
+            <a href="#" ng-click="switchToRegister()">Register here</a>
+        </p>
+    </form>
+
+    <!-- Register Form -->
+    <form ng-submit="" ng-show="showRegister">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="reg-email" ng-model="newUser.email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="reg-password" ng-model="newUser.password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <p class="mt-3">
+            Already have an account? 
+            <a href="#" ng-click="toggleForm()">Login here</a>
+        </p>
+    </form>
+
+    <!-- Error Message -->
+    <div ng-if="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
 </div>
